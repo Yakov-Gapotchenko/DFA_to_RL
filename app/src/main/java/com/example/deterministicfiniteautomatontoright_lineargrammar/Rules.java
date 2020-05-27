@@ -17,6 +17,17 @@ public class Rules {
         this.rulesList = rulesList;
     }
 
+
+    public String getRulesListAsString() {
+        String res="";
+        for( Rule rule: rulesList)
+            res+=rule.toString()+"\n";
+        return res;
+
+    }
+
+
+
     public ArrayList<Rule> getRulesList() {
         return rulesList;
     }

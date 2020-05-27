@@ -8,7 +8,7 @@ public class DFA {
     String[] terminals;
     String[] nonTerminals;
 
-    boolean[] isValid;
+    int[] isValid;
 
     int nrows,ncols;
 
@@ -27,7 +27,7 @@ public class DFA {
         return nonTerminals;
     }
 
-    public boolean[] getIsValid() {
+    public int[] getIsValid() {
         return isValid;
     }
 
@@ -45,11 +45,40 @@ public class DFA {
 
 
 
+
+
+    static String arrayToString(String[] arr){
+        String res="{";
+
+        for(int i =0 ;i<arr.length-1;i++)
+            res+=arr[i]+"  ";
+        res= res + arr[arr.length-1]+ "}";
+
+        return res;
+
+
+    }
+
+
+    static String hashSetToString(LinkedHashSet<String> set){
+        String res="{";
+
+        for(String elem: set)
+            res+=elem + "   ";
+
+        res+="}";
+
+        return res;
+
+
+    }
+
+
     public LinkedHashSet<String> findValidStates(){
 
         LinkedHashSet<String> res = new LinkedHashSet<>();
         for(int i=0;i<nrows;i++){
-            if(isValid[i])
+            if(isValid[i]==1)
                 res.add(nonTerminals[i]);
         }
 
@@ -62,12 +91,12 @@ public class DFA {
 
 
         nrows = entire2dArray.length - 1;
-        ncols = entire2dArray[1].length - 2;
+        ncols = entire2dArray[0].length;
 
 
         terminals = new String[ncols];
         nonTerminals = new String[nrows];
-        isValid = new boolean[nrows];
+        isValid = new int[nrows];
 
         tableDFA = new String[nrows][ncols];
 
@@ -84,7 +113,7 @@ public class DFA {
             for(int j=1;j<entire2dArray[i].length-1;j++)
                 tableDFA[i-1][j-1]=entire2dArray[i][j];
 
-            isValid[i-1]=Boolean.parseBoolean(entire2dArray[i][entire2dArray[i].length-1]);
+            isValid[i-1]=Integer.parseInt(entire2dArray[i][entire2dArray[i].length-1]);
 
 
 

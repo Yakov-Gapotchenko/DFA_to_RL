@@ -6,58 +6,66 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+
+    <EditText
+        android:id="@+id/editTextDFA"
+        android:layout_width="384dp"
+        android:layout_height="0dp"
+
+        android:layout_marginStart="8dp"
+
+        android:layout_marginEnd="8dp"
+
+        android:layout_marginBottom="8dp"
+        android:layout_weight="5"
+        android:inputType="textMultiLine"
+        android:maxLines="7"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/btnTransform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textViewRLG"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/btnTransform"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:onClick="onBtnTransform"
+        android:text="Transform"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+         />
+
+
+    <TextView
+        android:id="@+id/textViewRLG"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="14dp"
-        >
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-
-            android:inputType="textMultiLine"
-
-            android:textAlignment="center"
-
-            android:maxLines="7"
-            android:id="@+id/editTextDFA"
-            />
+        android:layout_height="0dp"
 
 
-        <Button
-            android:id="@+id/btnTransform"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Transform"
-            android:layout_gravity="center"
-            android:onClick="onBtnTransform"/>
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:maxLines="12"
+        android:layout_margin="8dp"
 
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+        android:textAlignment="center"
+        android:textIsSelectable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnTransform">
+
+    </TextView>
 
 
-                android:textAlignment="center"
-                android:maxLines="7"
-                android:textIsSelectable="true"
-
-
-
-                android:id="@+id/textViewRLG"
-                >
-
-            </TextView>
-
-
-
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void onBtnTranform(View view) {
+    public void onBtnTransform(View view) {
 
         EditText editText = findViewById(R.id.editTextDFA);//dfa - deterministic finite automaton
         TextView textView = findViewById(R.id.textViewRLG);//rlg - right-linear grammar
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         for (int i = 0; i < nrows; i++) {
-            entire2dArray[i] = strArrayDFA[i].split("[ ]+");
+            entire2dArray[i] = strArrayDFA[i].trim().split("[ ]+");
         }
 
         // transform prepared input data to output
@@ -50,12 +50,12 @@ public class MainActivity extends AppCompatActivity {
         // five string components of result which will be concatenate to one string
         String startState = dfa.getNonTerminals()[0];
 
-        String states = dfa.getNonTerminals().toString();
-        String alphabet = dfa.getTerminals().toString();
+        String states = DFA.arrayToString(dfa.getNonTerminals());
+        String alphabet = DFA.arrayToString(dfa.getTerminals());
 
-        String acceptStates = dfa.findValidStates().toString();
+        String acceptStates = DFA.hashSetToString(dfa.findValidStates());
 
-        String rulesAsStr = dfa.findRules().getRulesList().toString();
+        String rulesAsStr =dfa.findRules().getRulesListAsString();
 
         String oneBigResult = String.format("Start state:\t%s\n" + "States:\t%s\n" + "Alphabet:\t%s\n" + "Accept states:\t%s\n" + "Rules:\t%s\n",startState,states,alphabet,acceptStates,rulesAsStr);
 
