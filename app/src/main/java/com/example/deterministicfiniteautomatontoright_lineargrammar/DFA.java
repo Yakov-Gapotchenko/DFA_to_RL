@@ -131,6 +131,9 @@ public class DFA {
         for(int i=0;i<nrows;i++) {
             for (int j = 0; j < ncols; j++)
                 rules.addRule(new Rule(nonTerminals[i], terminals[j] + tableDFA[i][j]));
+
+            if(isValid[i]==1)
+                rules.addRule(new Rule(nonTerminals[i], "_"));
         }
 
         return rules;
