@@ -2,9 +2,6 @@ package com.example.deterministicfiniteautomatontoright_lineargrammar;
 
 import java.util.ArrayList;
 
-
-
-
 public class Rules {
 
     ArrayList<Rule> rulesList;
@@ -43,8 +40,6 @@ public class Rules {
 
         for(Rule rule: rulesList)
             System.out.println(rule.getLeft()+"->"+rule.getRight());
-
-
     }
 
     public String rulesAsOneMultilineString(){

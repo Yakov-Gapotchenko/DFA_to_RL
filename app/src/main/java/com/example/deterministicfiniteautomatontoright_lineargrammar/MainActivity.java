@@ -53,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
         String states = DFA.arrayToString(dfa.getNonTerminals());
         String alphabet = DFA.arrayToString(dfa.getTerminals());
 
-        String acceptStates = DFA.hashSetToString(dfa.findValidStates());
+        //String acceptStates = DFA.hashSetToString(dfa.findValidStates());
 
         String rulesAsStr =dfa.findRules().getRulesListAsString();
 
-        String oneBigResult = String.format("Start state:\t%s\n" + "States:\t%s\n" + "Alphabet:\t%s\n" + "Accept states:\t%s\n" + "Rules:\t%s\n",startState,states,alphabet,acceptStates,rulesAsStr);
+        String oneBigResult = String.format("Start state:\t%s\n" + "States:\t%s\n" + "Alphabet:\t%s\n" +  "Rules:\t%s\n",startState,states,alphabet,rulesAsStr);
 
 
         // set text
@@ -65,16 +65,6 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(oneBigResult);
 
 
-
-
-
     }
-
-
-
-
-        
-
-
 
 }

@@ -44,9 +44,6 @@ public class DFA {
     }
 
 
-
-
-
     static String arrayToString(String[] arr){
         String res="{";
 
@@ -69,8 +66,6 @@ public class DFA {
         res+="}";
 
         return res;
-
-
     }
 
 
@@ -86,14 +81,10 @@ public class DFA {
 
     }
 
-
     public void setTableDFA(String[][] entire2dArray) {
-
 
         nrows = entire2dArray.length - 1;
         ncols = entire2dArray[0].length;
-
-
         terminals = new String[ncols];
         nonTerminals = new String[nrows];
         isValid = new int[nrows];
@@ -114,12 +105,7 @@ public class DFA {
                 tableDFA[i-1][j-1]=entire2dArray[i][j];
 
             isValid[i-1]=Integer.parseInt(entire2dArray[i][entire2dArray[i].length-1]);
-
-
-
         }
-
-
 
     }
 
@@ -159,21 +145,6 @@ public class DFA {
         Rules rules = dfa.findRules();
 
         rules.rulesConsoleOutput();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }

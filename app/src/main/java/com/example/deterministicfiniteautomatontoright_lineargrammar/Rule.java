@@ -31,7 +31,6 @@ public class Rule {
 
     }
 
-
     public String toString(){
 
         return new String(getLeft()+"->"+getRight());
